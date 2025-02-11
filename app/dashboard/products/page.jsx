@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default async function Products() {
@@ -19,7 +20,8 @@ export default async function Products() {
         </li>
         {data.map((product) => {
           return (
-            <li
+            <Link
+              href="/dashboard/products"
               className="border-b-2 border-dashed border-gray-400 py-3 grid grid-cols-6 items-center justify-between"
               key={product.id}
             >
@@ -29,7 +31,7 @@ export default async function Products() {
               <p>{product.price}</p>
               <p>{product.stock}</p>
               <p>{product.sellCount}</p>
-            </li>
+            </Link>
           );
         })}
       </ul>
